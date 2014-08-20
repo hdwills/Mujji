@@ -8,6 +8,7 @@ $red:   #7f0019;
 $primary-chase:   #f5f2e9;
 $primary-shencha: #f5eedd;
 
+@import "bourbon/bourbon";
 @import "normalize";
 
 * {
@@ -94,6 +95,10 @@ blockquote p {
     display: inline;
 }
 
+.clearfix {
+  @include clearfix;
+}
+
 .container {
     width: 960px;
     margin: 0 auto;
@@ -123,9 +128,10 @@ blockquote p {
     margin-top: 3em;
     padding-bottom: 3em;
     line-height: 1.8em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 4px double #ccc;
     *:last-child {
         margin-bottom: 0;
+        border-bottom-width: 0;
     }
 }
 .blog-post-detail {
@@ -157,13 +163,12 @@ blockquote p {
 
 footer {
     margin: 3em 0;
-
     .footer-copyright {
         font-size: .8em;
         width: 50%;
         float: left;
         p {
-            margin-top: .2em;
+            margin-top: 0;
             margin-bottom: 0;
             text-align: right;
             
