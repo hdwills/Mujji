@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// @authors Harry
+// @date    2014-08-19 10:51:43
+
+.archive-list {
+    margin-top: 3em;
+    padding-left: 0;
+    padding-bottom: 2em;
+    line-height: 1.8em;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    > li {
+        list-style: none;
+        > h2 {
+            text-shadow: 1px 1px 0 #ccc;
+        }
+    }
+    ul {
+        li {
+            small {
+                margin-right: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+// @authors Harry
+// @date    2014-05-27 23:03:09
+
+// variables
+$red:   #7f0019;
+$primary-chase:   #f5f2e9;
+$primary-shencha: #f5eedd;
+
+@import "normalize";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    color: #555;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color:$red;
+}
+a:active, a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: .83em 0
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0
+}
+
+h5 {
+    font-size: .83em;
+    margin: 1.67em 0
+}
+
+h6 {
+    font-size: .67em;
+    margin: 2.33em 0
+}
+
+h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 small,.h4 small,.h5 small,.h6 small,h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small,.h1 .small,.h2 .small,.h3 .small,.h4 .small,.h5 .small,.h6 .small {
+    font-weight: 400;
+    line-height: 1;
+    color: #999
+}
+
+p, ul, ol {
+    margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    font-family: inherit;
+    color: inherit;
+}
+
+hr {
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(255,255,255,.8);
+}
+
+blockquote {
+    border-left: 2px solid #ddd;
+    color: #595959;
+    margin: 1em 0;
+    padding-left: 0.75em;
+}
+blockquote p {
+    display: inline;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.blog-header {
+    background-color: $red;
+    border-bottom: 1px solid darken($red, 10%);
+    nav {
+        width: 100%;
+        a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            line-height: 1em;
+            padding: 1.4em 0;
+            margin-right: 2em;
+            &:hover, &:focus {
+                color: #bf808c;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.blog-post {
+    margin-top: 3em;
+    padding-bottom: 3em;
+    line-height: 1.8em;
+    border-bottom: 1px solid #ccc;
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+.blog-post-detail {
+    border-bottom-width: 0;
+}
+.blog-post-title, .archive-list-title {
+    margin-top: 0;
+    a {
+        color: #333;
+        &:hover {
+            color: $red;
+        }
+    }
+}
+
+.blog-post-meta {
+    span {
+        margin-right: 1em;
+        color: #888;
+    }
+    a {
+        color: #888;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+footer {
+    margin: 3em 0;
+
+    .footer-copyright {
+        font-size: .8em;
+        width: 50%;
+        float: left;
+        p {
+            margin-top: .2em;
+            margin-bottom: 0;
+            text-align: right;
+            
+        }
+    }
+    .footer-info {
+        width: 50%;
+        float: left;
+        a {
+            color: #999;
+            text-shadow: 0 1px 0 #fff;
+            margin-right: .6em;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}
+
+@import "archive";

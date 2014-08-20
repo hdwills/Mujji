@@ -1,0 +1,47 @@
+html
+	head
+		meta(content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name="viewport")
+		meta(content="yes", name="apple-mobile-web-app-capable")
+		meta(content="black", name="apple-mobile-web-app-status-bar-style")
+		meta(content="telephone=no", name="format-detection")
+		meta(name="renderer", content="webkit")
+		title
+			block title
+				| {{ request.args.s or site.title }}
+		load('fonts /template/css/blog.scss')
+	body
+		#body_wrapper
+			site_cover = site.configs.cover if site.configs.cover and has(site.configs.cover) else '/farbox_free_image.jpg'
+			header.header(style="background-image: url({{site_cover}})")
+				.header_wrapper
+					h1.title
+						a(href='/')= site.title
+					ul.nav
+						li
+							a(href="/") Home
+						if has('images')
+							li
+								a(href='/album') Albums
+							if not has('posts')
+								redirect('/album')
+						if has('categories')
+							li
+								a(href='/category') Categories
+						if has('posts')
+							li
+								a(href='/archive') Archive
+						if site.tags
+							li
+								a(href='/tags') Tags
+						if has('about.md')
+							li
+								a(href='/about.md') About
+						li
+							a(href="/feed") RSS
+			#main
+				block content
+			#footer
+				.powered_by
+					a(href="https://www.farbox.com", target="_blank") Powered By FarBox.com
+					a(href="/admin") Admin
+					span ©2012-2015 Z.R.E.Y Inc.

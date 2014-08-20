@@ -1,0 +1,61 @@
+@@include("include/header.html",{"title":"Post"})
+    <div class="blog-main">
+        <div class="container">
+            <div class="blog-post blog-post-detail">
+                <h2 class="blog-post-title"><a href="#">Sass 学习笔记 - @extend, placeholder</a></h2>
+
+                <p class="blog-post-meta">
+                    <span class="date"><i class="fa fa-calendar"></i> 2014-01-01</span>
+                    <span class="tags">
+                        <i class="fa fa-tags"></i>
+                        <a href="#">Compass</a>
+                        <a href="#">Sass</a>
+                    </span>
+                    <span class="count"><i class="fa fa-eye"></i> 11</span>
+                </p>
+
+                <div class="post_body">
+                    <p>最近在读 《Sass and Compass for Designers》中文版，之前关注过，等了一阵子之后看到中文版面世了，就迫不及待的买了过来，主要是英文水平太渣，只好看中文。</p>
+
+                    <p>现在就 Sass 中的两项常用功能，也是作为初学者容易混淆的两个概念，作为读书笔记，记录一下。</p>
+
+                    <h3>使用 @extend 命令拓展现有代码</h3>
+
+                    <blockquote>
+                        <p>我自己理解就是，多个元素的共有属性，就将这些共有属性定义为基础样式组建，然后其余个性化的组件，都是通过这个基础组件来扩展，之前在项目中用到的不多，通常分不清 @extend 和 placeholder 这两者的使用场景。</p>
+                        <p>我自己理解就是，多个元素的共有属性，就将这些共有属性定义为基础样式组建，然后其余个性化的组件，都是通过这个基础组件来扩展，之前在项目中用到的不多，通常分不清 @extend 和 placeholder 这两者的使用场景。</p>
+                        <p>我自己理解就是，多个元素的共有属性，就将这些共有属性定义为基础样式组建，然后其余个性化的组件，都是通过这个基础组件来扩展，之前在项目中用到的不多，通常分不清 @extend 和 placeholder 这两者的使用场景。</p>
+                        <p>下面我们通过书中的代码，来进一步理解：见P76，书中列举的这个例子，经常都能用到。</p>
+                    </blockquote>
+
+                    <blockquote>使用 @extend 命令可扩展另一种样式，可让任何样式继承其他样式定义好的属性和值。</blockquote>
+
+                    <p>我自己理解就是，多个元素的共有属性，就将这些共有属性定义为基础样式组建，然后其余个性化的组件，都是通过这个基础组件来扩展，之前在项目中用到的不多，通常分不清 @extend 和 placeholder 这两者的使用场景。</p>
+
+                    <p>下面我们通过书中的代码，来进一步理解：见P76，书中列举的这个例子，经常都能用到。</p>
+
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <pre><code>Example code block</code></pre>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    <ol>
+                        <li>Vestibulum id ligula porta felis euismod semper.</li>
+                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                    </ol>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+                </div>
+                <!-- .pager -->
+            </div>
+        </div>
+    </div>
+@@include("include/footer.html")
