@@ -27,11 +27,9 @@ body {
 
 a {
     text-decoration: none;
-}
-a:link, a:visited {
     color:$red;
 }
-a:active, a:hover {
+a:hover, a:active {
     text-decoration: underline;
 }
 
@@ -186,3 +184,4 @@ footer {
 }
 
 @import "archive";
+@import "album";

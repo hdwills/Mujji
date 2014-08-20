@@ -260,80 +260,76 @@ body {
 /* line 28, style.scss */
 a {
   text-decoration: none;
-}
-
-/* line 31, style.scss */
-a:link, a:visited {
   color: #7f0019;
 }
 
-/* line 34, style.scss */
-a:active, a:hover {
+/* line 32, style.scss */
+a:hover, a:active {
   text-decoration: underline;
 }
 
-/* line 38, style.scss */
+/* line 36, style.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 43, style.scss */
+/* line 41, style.scss */
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-/* line 48, style.scss */
+/* line 46, style.scss */
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-/* line 53, style.scss */
+/* line 51, style.scss */
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-/* line 58, style.scss */
+/* line 56, style.scss */
 h5 {
   font-size: .83em;
   margin: 1.67em 0;
 }
 
-/* line 63, style.scss */
+/* line 61, style.scss */
 h6 {
   font-size: .67em;
   margin: 2.33em 0;
 }
 
-/* line 68, style.scss */
+/* line 66, style.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
   font-weight: 400;
   line-height: 1;
   color: #999999;
 }
 
-/* line 74, style.scss */
+/* line 72, style.scss */
 p, ul, ol {
   margin: 1em 0;
 }
 
-/* line 78, style.scss */
+/* line 76, style.scss */
 h1, h2, h3, h4, h5, h6, p, ul, ol {
   font-family: inherit;
   color: inherit;
 }
 
-/* line 83, style.scss */
+/* line 81, style.scss */
 hr {
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/* line 89, style.scss */
+/* line 87, style.scss */
 blockquote {
   border-left: 2px solid #ddd;
   color: #595959;
@@ -341,27 +337,27 @@ blockquote {
   padding-left: 0.75em;
 }
 
-/* line 95, style.scss */
+/* line 93, style.scss */
 blockquote p {
   display: inline;
 }
 
-/* line 99, style.scss */
+/* line 97, style.scss */
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 104, style.scss */
+/* line 102, style.scss */
 .blog-header {
   background-color: #7f0019;
   border-bottom: 1px solid #4c000f;
 }
-/* line 107, style.scss */
+/* line 105, style.scss */
 .blog-header nav {
   width: 100%;
 }
-/* line 109, style.scss */
+/* line 107, style.scss */
 .blog-header nav a {
   display: inline-block;
   color: #fff;
@@ -370,85 +366,85 @@ blockquote p {
   padding: 1.4em 0;
   margin-right: 2em;
 }
-/* line 116, style.scss */
+/* line 114, style.scss */
 .blog-header nav a:hover, .blog-header nav a:focus {
   color: #bf808c;
   text-decoration: none;
 }
 
-/* line 124, style.scss */
+/* line 122, style.scss */
 .blog-post {
   margin-top: 3em;
   padding-bottom: 3em;
   line-height: 1.8em;
   border-bottom: 1px solid #ccc;
 }
-/* line 129, style.scss */
+/* line 127, style.scss */
 .blog-post *:last-child {
   margin-bottom: 0;
 }
 
-/* line 133, style.scss */
+/* line 131, style.scss */
 .blog-post-detail {
   border-bottom-width: 0;
 }
 
-/* line 136, style.scss */
+/* line 134, style.scss */
 .blog-post-title, .archive-list-title {
   margin-top: 0;
 }
-/* line 138, style.scss */
+/* line 136, style.scss */
 .blog-post-title a, .archive-list-title a {
   color: #333;
 }
-/* line 140, style.scss */
+/* line 138, style.scss */
 .blog-post-title a:hover, .archive-list-title a:hover {
   color: #7f0019;
 }
 
-/* line 147, style.scss */
+/* line 145, style.scss */
 .blog-post-meta span {
   margin-right: 1em;
   color: #888;
 }
-/* line 151, style.scss */
+/* line 149, style.scss */
 .blog-post-meta a {
   color: #888;
   text-decoration: none;
 }
-/* line 154, style.scss */
+/* line 152, style.scss */
 .blog-post-meta a:hover {
   text-decoration: underline;
 }
 
-/* line 160, style.scss */
+/* line 158, style.scss */
 footer {
   margin: 3em 0;
 }
-/* line 163, style.scss */
+/* line 161, style.scss */
 footer .footer-copyright {
   font-size: .8em;
   width: 50%;
   float: left;
 }
-/* line 167, style.scss */
+/* line 165, style.scss */
 footer .footer-copyright p {
   margin-top: .2em;
   margin-bottom: 0;
   text-align: right;
 }
-/* line 174, style.scss */
+/* line 172, style.scss */
 footer .footer-info {
   width: 50%;
   float: left;
 }
-/* line 177, style.scss */
+/* line 175, style.scss */
 footer .footer-info a {
   color: #999;
   text-shadow: 0 1px 0 #fff;
   margin-right: .6em;
 }
-/* line 181, style.scss */
+/* line 179, style.scss */
 footer .footer-info a:hover {
   color: #7f0019;
 }
@@ -473,4 +469,75 @@ footer .footer-info a:hover {
 /* line 21, _archive.scss */
 .archive-list ul li small {
   margin-right: 20px;
+}
+
+/* line 6, _album.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+
+/* line 11, _album.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 15, _album.scss */
+.album-list {
+  padding-left: 0;
+  margin-top: 3em;
+  padding-bottom: 2em;
+  line-height: 1.8em;
+}
+/* line 20, _album.scss */
+.album-list > li {
+  padding: 0 15px;
+  list-style: none;
+  float: left;
+  width: 33.33%;
+}
+/* line 26, _album.scss */
+.album-list .caption {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+/* line 35, _album.scss */
+.album-list .caption span {
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+/* line 42, _album.scss */
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 30px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #555;
+  text-decoration: none;
+}
+/* line 53, _album.scss */
+.thumbnail img {
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+/* line 61, _album.scss */
+.thumbnail:hover {
+  color: #7f0019;
+  text-decoration: none;
 }
