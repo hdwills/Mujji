@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    background-color: #fafafa;
     color: #555;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -164,22 +165,25 @@ blockquote p {
 }
 
 footer {
-//    border-top: 1px solid darken($red, 10%);
     padding: 3em 0;
-    background-color: #f0f0f0;
+    background-color: #ddd;
     color: #999;
     a {
         color: #666;
         text-shadow: 0 1px 0 #fff;
         margin-right: .6em;
         &:hover {
-            color: #bf808c;;
+            color: #bf808c;
         }
+    }
+    .container {
+        display: table;
     }
     .footer-copyright {
         font-size: .8em;
         width: 50%;
-        float: left;
+        display: table-cell;
+        vertical-align: top;
         p {
             margin-top: 0;
             margin-bottom: 0;
@@ -189,7 +193,19 @@ footer {
     }
     .footer-info {
         width: 50%;
-        float: left;
+        display: table-cell;
+    }
+}
+
+.pager {
+    padding: 3em 0;
+    text-align: center;
+    a {
+        height: 60px;
+        line-height: 60px;
+        display: inline-block;
+        margin: 0 20px;
+        color: #bf808c;
     }
 }
 
