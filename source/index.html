@@ -1,4 +1,4 @@
-@@include("include/header.html",{"title":"首页"})
+@@include("_includes/header.html",{"title":"首页"})
     <div class="blog-main">
         <div class="container">
             <div class="blog-post">
@@ -49,7 +49,15 @@
 
             <div class="blog-post">
                 <h2 class="blog-post-title">Sass 学习笔记 - 项目文件结构</h2>
-                <p class="blog-post-meta">20140505</p>
+                <p class="blog-post-meta">
+                    <span class="date"><i class="fa fa-calendar"></i> 2014-01-01</span>
+                    <span class="tags">
+                        <i class="fa fa-tags"></i>
+                        <a href="#">Compass</a>
+                        <a href="#">Sass</a>
+                    </span>
+                    <span class="count"><i class="fa fa-eye"></i> 11</span>
+                </p>
                 <p>项目开始之前接触过 Sass，这次开始开发之前已经下定决心，将 Sass 引入开发环境中。</p>
 
                 <p>起初大致是这么安排的：</p>
@@ -84,7 +92,56 @@
                   </li>
                 </ol>
             </div>
-            @@include("include/pagination.html")
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">Sass 学习笔记 - 项目文件结构</h2>
+                <p class="blog-post-meta">
+                    <span class="date"><i class="fa fa-calendar"></i> 2014-01-01</span>
+                    <span class="tags">
+                        <i class="fa fa-tags"></i>
+                        <a href="#">Compass</a>
+                        <a href="#">Sass</a>
+                    </span>
+                    <span class="count"><i class="fa fa-eye"></i> 11</span>
+                </p>
+                <p>项目开始之前接触过 Sass，这次开始开发之前已经下定决心，将 Sass 引入开发环境中。</p>
+
+                <p>起初大致是这么安排的：</p>
+                <div class="codehilite">
+                    <pre>
+                    sass /
+                    ├── _variables.scss
+                    ├── _mixins.scss
+                    ├── _reset.scss
+                    ├── _grid.scss
+                    ├── _buttons.scss
+                    ├── _iconfont.scss
+                    ......
+                    ├── _home.scss
+                    ├── _index.scss
+                    ......
+                    ├── style.scss
+                    </pre>
+                </div>
+                <p>其中<code>_grid.scss</code>这种命名带有<code>_</code>，都是当做<code>@import</code>导入使用的，这也是告诉 Sass 在编译的时候，不会编译输出这类文件。因为在使用 Grunt 时会监控目录整个目录的变化，从而再编译输出。</p>
+
+                <p>比如 reset 这部分，我后来改成 <a href="http://necolas.github.io/normalize.css/">normalize.css</a> 并且还是 <a href="http://www.staticfile.org/">staticfile</a> 的 CDN 服务；iconfont 这部分改为 <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a>，也使用了 CDN 服务。</p>
+
+                <p>后来在逐渐使用中，发现了项目中的文件结构，不管怎么安排还是应该尽可能的让大家在组织起来都觉得顺手。所以在起初构建的时候，按照需求大致分配一下相应的功能模块，然后再具体实施，毕竟各个项目都有特性，但是基础部分应该都适用。</p>
+
+                <ol>
+                    <li>
+                        <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zurb/foundation">foundation</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="container">
+            @@include("_includes/pagination.html")
         </div>
     </div>
-@@include("include/footer.html")
+@@include("_includes/footer.html")
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut dolorum eum eveniet laudantium libero maxime possimus ratione repudiandae suscipit vel veritatis vitae, voluptate. Asperiores earum eveniet exercitationem minus nesciunt!

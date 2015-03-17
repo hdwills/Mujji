@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+// @authors Harry
+// @date    2014-08-20 09:22:34
+
+.album-list {
+    padding-left: 0;
+    margin: 2em 0 0;
+    line-height: 1.8em;
+    > li {
+        padding: 0 1em;
+        list-style: none;
+        float: left;
+        width: 33.33%;
+    }
+    .caption {
+
+    }
+}
+.thumbnail {
+    display: block;
+    margin-bottom: 4.625em;
+    background-color: #eee;
+    position: relative;
+    .thumbnail-figure {
+        img {
+            display: block;
+            width: 100% \9;
+            max-width: 100%;
+            height: auto
+        }
+        &:before {
+            position: absolute;
+            content: "";
+            display: block;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: $gray-base;
+            transition: opacity 0.2s ease-out;
+        }
+    }
+    .thumbnail-caption {
+        position: absolute;
+        bottom: -2.75em;
+        overflow: hidden;
+        background-color: $brand-chase;
+        padding: 0 10px;
+        width: 100%;
+        height: 2.75em;
+        transition: all 0.2s ease-out;
+        border: 1px solid $brand-chase;
+        @include text-overflow();
+        .title {
+            margin: .5em 0 0;
+        }
+        .date {
+            margin: 0;
+            color: $gray-lighter;
+        }
+    }
+    color: #555;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        .thumbnail-caption {
+            height: 4.375em;
+            border: 1px solid #ddd7c7;
+        }
+        .thumbnail-figure {
+            &:before {
+                opacity: .3;
+            }
+        }
+    }
+}

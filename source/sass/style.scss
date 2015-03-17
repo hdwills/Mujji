@@ -3,12 +3,29 @@
 // @authors Harry
 // @date    2014-05-27 23:03:09
 
-// variables
-$red:   #7f0019;
-$primary-chase:   #f5f2e9;
-$primary-shencha: #f5eedd;
+//
+// Variables
+// --------------------------------------------------
 
-@import "bourbon/bourbon";
+//== Colors
+$red:                    #7f0019 !default;
+$cyan:                   #007f66 !default;
+$brand-chase:            #f5f2e9 !default;
+$brand-shencha:          #f5eedd !default;
+$brand-instagram:        #3f729b !default;
+$brand-weibo:            #e6162e !default;
+$brand-github:           #4183c4 !default;
+
+$gray-base:              #000 !default;
+$gray-dark:              lighten($gray-base, 20%) !default; // #333
+$gray-light:             lighten($gray-base, 40%) !default; // #666
+$gray-lighter:           lighten($gray-base, 60%) !default; // #999
+
+//
+// Mixins
+// --------------------------------------------------
+@import "mixins/clearfix";
+@import "mixins/text-overflow";
 
 * {
     -webkit-box-sizing: border-box;
@@ -28,7 +45,7 @@ body {
 
 a {
     text-decoration: none;
-    color:$red;
+    color: $red;
 }
 a:hover, a:active {
     text-decoration: underline;
@@ -124,18 +141,24 @@ blockquote p {
     }
 }
 
+.blog-main > .container > .blog-post {
+    &:not(:last-child) {
+        border-bottom: 4px double #ccc;
+    }
+}
+
 .blog-post {
     margin-top: 3em;
     padding-bottom: 3em;
     line-height: 1.8em;
-    border-bottom: 4px double #ccc;
     *:last-child {
         margin-bottom: 0;
         border-bottom-width: 0;
     }
-    &:last-child {
-        border-bottom-width: 0;
-    }
+
+//    &:last-child {
+//        border-bottom-width: 0;
+//    }
 }
 .blog-post-detail {
     border-bottom-width: 0;
@@ -166,23 +189,24 @@ blockquote p {
 
 footer {
     padding: 3em 0;
-    background-color: #ddd;
+    border-top: 1px solid #ddd7c7;
+    background-color: $brand-shencha;
     color: #999;
     a {
         color: #666;
         text-shadow: 0 1px 0 #fff;
         margin-right: .6em;
+        transition: color 0.2s ease-out;
         &:hover {
-            color: #bf808c;
+            color: $red;
         }
     }
     .container {
-        display: table;
+        display: flex;
     }
     .footer-copyright {
         font-size: .8em;
-        width: 50%;
-        display: table-cell;
+        flex: 1;
         vertical-align: top;
         p {
             margin-top: 0;
@@ -192,20 +216,38 @@ footer {
         }
     }
     .footer-info {
-        width: 50%;
-        display: table-cell;
+        flex: 1;
     }
 }
 
 .pager {
     padding: 3em 0;
     text-align: center;
+    border-top: 4px double #ccc;
     a {
         height: 60px;
         line-height: 60px;
         display: inline-block;
         margin: 0 20px;
         color: #bf808c;
+    }
+}
+
+a.btn {
+    &-instagram {
+        &:hover {
+            color: $brand-instagram;
+        }
+    }
+    &-weibo {
+        &:hover {
+            color: $brand-weibo;
+        }
+    }
+    &-github {
+        &:hover {
+            color: $brand-github;
+        }
     }
 }
 

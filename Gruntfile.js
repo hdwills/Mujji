@@ -1,29 +1,56 @@
 module.exports = function (grunt) {
     grunt.initConfig({
 
-        // Banner 注释
-        banner: '/*!\n' +
-            ' * <%= grunt.template.today("yyyy") %> Broadree, <%= grunt.template.today("isoDateTime") %>\n' +
-            ' * Font Awesome v4.1.0 | Normalize.css v3.0.1\n' +
-            ' */',
+        config: {
+            src: 'source',
+            dest: 'dist',
+            tmp: '.tmp'
+        },
 
-        // 清空目录
+        banner: '/*!\n' +
+        ' * <%= grunt.template.today("yyyy-mm-dd HH:MM:ss Z") %> by @Harry\n' +
+        ' * Font Awesome v4.2.0 | Normalize.css v3.0.2\n' +
+        ' */',
+
         clean: {
-            // 清空发布目录
-            release: {
-                src: ["build/"]
+            dist: {
+                src: ['<%= config.dest %>', '<%= config.tmp %>']
             }
         },
 
-        // 模板
-        includereplace: {
-            template: {
+        copy: {
+            dist: {
                 files: [
                     {
                         expand: true,
-                        cwd: "src/",
-                        src: ["*.html"],
-                        dest: "html/"
+                        cwd: '<%= config.src %>',
+                        src: 'img/**/*.*',
+                        dest: '<%= config.dest %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= config.src %>',
+                        src: 'files/**/*.*',
+                        dest: '<%= config.dest %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= config.src %>',
+                        src: ['scripts/**/{*min*,*pack*}.js'],
+                        dest: '<%= config.dest %>'
+                    }
+                ]
+            }
+        },
+
+        includereplace: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= config.src %>',
+                        src: '*.html',
+                        dest: '<%= config.dest %>'
                     }
                 ]
             }
@@ -32,165 +59,168 @@ module.exports = function (grunt) {
         compass: {
             dist: {
                 options: {
-                    config: "config/config.rb",
-                    sassDir: "css",
-                    cssDir: "css",
-                    imagesDir: "images/",
-                    // generatedImagesDir: "images/sprites/",
-                    // generatedImagesPath: "images/sprites/",
-                    // httpGeneratedImagesPath: "images/",
-                    environment: 'development'
+                    // config: 'config/config.rb',
+                    sassDir: '<%= config.src %>/sass',
+                    cssDir: '<%= config.src %>/css',
+                    imagesDir: '<%= config.src %>/img',
+                    // environment: 'development production',
+                    environment: 'production',
+                    outputStyle: 'expanded',
+                    sourcemap: true
                 }
             }
         },
 
-        // 打包发布
+        autoprefixer: {
+            options: {
+                browsers: [
+                    "Android 2.3",
+                    "Android >= 4",
+                    "Chrome >= 20",
+                    "Firefox >= 24",
+                    "Explorer >= 8",
+                    "iOS >= 6",
+                    "Opera >= 12",
+                    "Safari >= 6"
+                ]
+            },
+            core: {
+                options: {
+                    map: true
+                },
+                src: '<%= concat.core.dest %>'
+            }
+        },
+
+        concat: {
+            core: {
+                src: '<%= config.src %>/css/style.css',
+                dest: '<%= config.dest %>/css/style.min.css'
+            }
+        },
+
+        cssmin: {
+            options: {
+                compatibility: 'ie8',
+                keepSpecialComments: 0
+            },
+            core: {
+                src: '<%= concat.core.dest %>',
+                dest: '<%= concat.core.dest %>'
+            }
+        },
+
+        csscomb: {
+            core: {
+                files: {
+                    '<%= concat.core.dest %>': '<%= concat.core.dest %>'
+                }
+            }
+        },
+
         usebanner: {
             dist: {
-                // banner 位置
                 options: {
-                    position: "top",
-                    banner: "<%= banner %>"
+                    position: 'top',
+                    banner: '<%= banner %>'
                 },
-                // 要处理的文件
-                // task配置说明，http://gruntjs.com/configuring-tasks
                 files: {
                     src: [
-                        "dist/css/style.css"
+                        '<%= config.dest %>/css/*.min.css'
                     ]
                 }
             }
         },
 
-        // 压缩、合并 css
-        cssmin: {
-            minify: {
-                expand: true,                          // 开启动态扩展
-                cwd: "dist/",                          // 源文件目录
-                src: ["**/*.css", "!*.min.css"],       // 匹配文件
-                dest: "dist/"                          // 输出目录
-                // ext: ".css"                         // 输出文件扩展名，可省略，常配合 ".min.css"
-            }
-        },
-
-        // 配合打包发布
-        copy: {
-            style: {
-                expand: true, // 启用动态扩展
-                src: [
-                    "css/style.css"
-                ],
-                dest: "dist/"
-            }
-        },
-
-        // css 属性排序
-        // https://github.com/csscomb/grunt-csscomb
-        csscomb: {
-            // 最终都输出到 dist 目录
-            style: {
-                files: {
-                    "dist/css/style.css": "css/style.css"
-                }
-            }
-        },
-
-        // 图片压缩
         imagemin: {
             dynamic: {
                 options: {
-                    optimizationLevel: 3 // PNG 图片优化水平
+                    optimizationLevel: 3
                 },
                 files: [
                     {
-                        expand: true, // 开启动态扩展
-                        cwd: "images/", // 源文件目录 current working directory
-                        src: ["**/*.{png,jpg,gif}"], // 源文件格式
-                        dest: "images/" // 输出目录
+                        expand: true,
+                        cwd: '<%= config.dest %>/img',
+                        src: ['**/*.{png,jpg,gif}'],
+                        dest: '<%= config.dest %>/img'
                     }
                 ]
             }
         },
 
-        // 配合 livereload 使用，建立本地调试环境
         connect: {
-            livereload: {
+            options: {
+                port: 11011,
+                hostname: 'localhost',
+                base: '.',
+                livereload: 35729
+            },
+            all: {
                 options: {
-                    port: 11011,
-                    base: "./",
-                    livereload: true
+                    open: true,
+                    base: '<%= config.dest %>'
                 }
-            }
-        },
-
-        // 配合 livereload 使用，打开项目
-        open: {
-            livereload: {
-                path: "http://localhost:11011"
             }
         },
 
         watch: {
             options: {
-                spawn: false
+                spawn: false,
+                livereload: '<%= connect.options.livereload %>'
             },
-            style: {
-                files: ["css/*.scss"],
-                tasks: ["compass"],
-                options: {
-                    livereload: true
-                }
-            },
-            includereplace: {
-                files: ["src/**/*.html"],
-                tasks: ["includereplace"],
-                options: {
-                    livereload: true
-                }
-            },
-            livereload: {
+            dev: {
                 files: [
-                    "html/*.html",
-                    "css/*.css"
+                    '<%= config.src %>/**'
                 ],
-                options: {
-                    livereload: true
-                }
+                tasks: 'dev'
             }
         },
 
-        jade: {
-            compile: {
-                options: {
-                    data: {}
-                },
-                files: [{
-                    expand: true,
-                    cwd: "template/",
-                    src: [ "**/*.jade" ],
-                    dest: "build",
-                    ext: ".html"
-                }]
+        useminPrepare: {
+            html: '<%= config.dest %>/index.html',
+            options: {
+                dest: '<%= config.dest %>',
+                root: '<%= config.dest %>'
             }
-        }
+        },
 
+        usemin: {
+            html: ['<%= config.dest %>/**/*.html'],
+            css: ['<%= config.dest %>/css/*.min.css']
+        }
 
     });
 
-    // 加载任务插件
-    grunt.loadNpmTasks("grunt-contrib-clean");
-    grunt.loadNpmTasks("grunt-contrib-copy");
-    grunt.loadNpmTasks("grunt-contrib-compass");
-    grunt.loadNpmTasks("grunt-contrib-cssmin");
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-contrib-connect");
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
 
-    grunt.loadNpmTasks("grunt-open");
-    grunt.loadNpmTasks("grunt-banner");
-    grunt.loadNpmTasks("grunt-csscomb");
-    grunt.loadNpmTasks('grunt-include-replace');
+    // Load grunt tasks automatically
+    require('load-grunt-tasks')(grunt);
 
-    // 配置任务
-    grunt.registerTask("lr", ["connect:livereload", "open:livereload", "watch"]);
-    grunt.registerTask("output", ["clean:release", "csscomb", "cssmin", "usebanner"]);
+    // registerTask
+    grunt.registerTask('dev', [
+        'clean',
+        'compass',
+        'copy',
+        'includereplace',
+        'concat',
+        'autoprefixer'
+    ]);
+    grunt.registerTask('build', [
+        'clean',
+        'copy',
+        'includereplace',
+        'useminPrepare',
+        'concat',
+        'autoprefixer',
+        'csscomb',
+        'cssmin',
+        'usemin',
+        'usebanner'
+    ]);
+    grunt.registerTask('default', [
+        'dev',
+        'connect',
+        'watch:dev'
+    ])
 }
