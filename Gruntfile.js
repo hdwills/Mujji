@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 
         banner: '/*!\n' +
         ' * <%= grunt.template.today("yyyy-mm-dd HH:MM:ss Z") %> by @Harry\n' +
-        ' * Font Awesome v4.2.0 | Normalize.css v3.0.2\n' +
+        ' * Font Awesome v4.3.0 | Normalize.css v3.0.2\n' +
         ' */',
 
         clean: {
