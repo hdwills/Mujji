@@ -94,8 +94,23 @@ blockquote p {
 }
 
 .container {
-  width: 960px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 990px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 .blog-header {
@@ -104,18 +119,29 @@ blockquote p {
 }
 .blog-header nav {
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .blog-header nav a {
-  display: inline-block;
+  display: block;
+  flex: 1;
   color: #fff;
   text-decoration: none;
-  line-height: 1em;
-  padding: 1.4em 0;
-  margin-right: 2em;
+  text-align: center;
+  padding: 1em;
 }
 .blog-header nav a:hover, .blog-header nav a:focus {
   color: #bf808c;
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  .blog-header nav {
+    flex-direction: column;
+  }
+  .blog-header nav a {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 .blog-main > .container > .blog-post:not(:last-child) {
@@ -144,6 +170,11 @@ blockquote p {
 }
 .blog-post-title a:hover, .archive-list-title a:hover {
   color: #7f0019;
+}
+@media (max-width: 768px) {
+  .blog-post-title a, .archive-list-title a {
+    display: block;
+  }
 }
 
 .blog-post-meta span {
@@ -240,7 +271,26 @@ a.btn-github:hover {
   padding: 0 1em;
   list-style: none;
   float: left;
-  width: 33.33%;
+}
+@media (max-width: 768px) {
+  .album-list > li {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .album-list > li {
+    width: 50%;
+  }
+}
+@media (min-width: 990px) {
+  .album-list > li {
+    width: 33.33%;
+  }
+}
+@media (min-width: 1200px) {
+  .album-list > li {
+    width: 25%;
+  }
 }
 
 .thumbnail {

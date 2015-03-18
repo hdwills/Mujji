@@ -11,10 +11,18 @@
         padding: 0 1em;
         list-style: none;
         float: left;
-        width: 33.33%;
-    }
-    .caption {
-
+        @media (max-width: $screen-sm-min) {
+            width: 100%;
+        }
+        @media (min-width: $screen-sm-min) {
+            width: 50%;
+        }
+        @media (min-width: $screen-md-min) {
+            width: 33.33%;
+        }
+        @media (min-width: $screen-lg-min) {
+            width: 25%;
+        }
     }
 }
 .thumbnail {
