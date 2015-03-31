@@ -1,11 +1,12 @@
 @@include("_includes/header.html",{"title":"Album"})
     <div class="blog-main">
         <div class="container">
+            <h2 class="header-topic">2014</h2>
             <ul class="album-list clearfix">
                 <li>
-                    <a href="album_list.html" class="thumbnail">
+                    <a class="thumbnail fancybox-thumb" rel="fancybox-thumb" href="http://farm8.staticflickr.com/7501/15812584301_1d63602c58_b.jpg">
                         <div class="thumbnail-figure">
-                            <img src="http://lorempixel.com/300/300/transport/1" alt=""/>
+                            <img src="http://farm8.staticflickr.com/7501/15812584301_1d63602c58_b.jpg" alt="" />
                         </div>
                         <div class="thumbnail-caption">
                             <h3 class="title">中文</h3>
@@ -14,9 +15,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="thumbnail">
+                    <a class="thumbnail fancybox-thumb" rel="fancybox-thumb" href="http://farm9.staticflickr.com/8665/15613375844_99dc1e5dc0_b.jpg">
                         <div class="thumbnail-figure">
-                            <img src="http://lorempixel.com/300/300/transport/2" alt=""/>
+                            <img src="http://farm9.staticflickr.com/8665/15613375844_99dc1e5dc0_b.jpg" alt="" />
                         </div>
                         <div class="thumbnail-caption">
                             <h3 class="title">中文</h3>
@@ -61,4 +62,21 @@
             @@include("_includes/pagination.html")
         </div>
     </div>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".fancybox-thumb").fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+            helpers: {
+                thumbs: {
+                    width: 50,
+                    height: 50
+                }
+            }
+        });
+    });
+</script>
 @@include("_includes/footer.html")

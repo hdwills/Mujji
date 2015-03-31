@@ -4,33 +4,18 @@
 // @date    2014-05-27 23:03:09
 
 //
-// Variables
+// Import
 // --------------------------------------------------
+@import "variables";
+@import "mixins";
 
-//== Colors
-$red:                    #7f0019 !default;
-$cyan:                   #007f66 !default;
-$brand-chase:            #f5f2e9 !default;
-$brand-shencha:          #f5eedd !default;
-$brand-instagram:        #3f729b !default;
-$brand-weibo:            #e6162e !default;
-$brand-github:           #4183c4 !default;
-
-$gray-base:              #000 !default;
-$gray-dark:              lighten($gray-base, 20%) !default; // #333
-$gray-light:             lighten($gray-base, 40%) !default; // #666
-$gray-lighter:           lighten($gray-base, 60%) !default; // #999
-
-//
-// Mixins
-// --------------------------------------------------
-@import "mixins/clearfix";
-@import "mixins/text-overflow";
+@import "normalize";
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
+    &:before,&:after {
+        @include box-sizing(border-box);
+    }
 }
 
 html {
@@ -117,7 +102,7 @@ blockquote p {
 }
 
 $screen-sm-min:  768px !default;
-$container-sm:   750px !default;
+$container-sm:   740px !default;
 $screen-md-min:  990px !default;
 $container-md:   960px !default;
 $screen-lg-min:  1200px !default;
@@ -135,6 +120,16 @@ $container-lg:   1170px !default;
     }
     @media (min-width: $screen-lg-min) {
         width: $container-lg;
+    }
+}
+
+.header-topic {
+    margin: 2em 0;
+    text-align: center;
+    &:before, &:after {
+        content: '—';
+        color: #eee;
+        margin: 1.5em;
     }
 }
 
@@ -182,10 +177,6 @@ $container-lg:   1170px !default;
         margin-bottom: 0;
         border-bottom-width: 0;
     }
-
-//    &:last-child {
-//        border-bottom-width: 0;
-//    }
 }
 .blog-post-detail {
     border-bottom-width: 0;
@@ -204,7 +195,7 @@ $container-lg:   1170px !default;
 }
 
 .blog-post-meta {
-    span {
+    time,.tags,.count {
         margin-right: 1em;
         color: #888;
     }

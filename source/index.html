@@ -1,11 +1,11 @@
 @@include("_includes/header.html",{"title":"首页"})
     <div class="blog-main">
         <div class="container">
-            <div class="blog-post">
+            <article class="blog-post">
                 <h2 class="blog-post-title"><a href="post.html">Sass 学习笔记 - @extend, placeholder</a></h2>
 
                 <p class="blog-post-meta">
-                    <span class="date"><i class="fa fa-calendar"></i> 2014-01-01</span>
+                    <time datetime="2001-05-15 19:00"><i class="fa fa-calendar"></i> 2001-05-15 19:00</time>
                     <span class="tags">
                         <i class="fa fa-tags"></i>
                         <a href="#">Compass</a>
@@ -45,10 +45,10 @@
                   <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
                 </ol>
                 <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-            </div>
+            </article>
 
-            <div class="blog-post">
-                <h2 class="blog-post-title">Sass 学习笔记 - 项目文件结构</h2>
+            <article class="blog-post">
+                <h2 class="blog-post-title"><a href="post.html">Sass 学习笔记 - 项目文件结构</a></h2>
                 <p class="blog-post-meta">
                     <span class="date"><i class="fa fa-calendar"></i> 2014-01-01</span>
                     <span class="tags">
@@ -63,18 +63,20 @@
                 <p>起初大致是这么安排的：</p>
                 <div class="codehilite">
                     <pre>
-                    sass /
-                    ├── _variables.scss
-                    ├── _mixins.scss
-                    ├── _reset.scss
-                    ├── _grid.scss
-                    ├── _buttons.scss
-                    ├── _iconfont.scss
-                    ......
-                    ├── _home.scss
-                    ├── _index.scss
-                    ......
-                    ├── style.scss
+                        <code>
+                            sass /
+                            ├── _variables.scss
+                            ├── _mixins.scss
+                            ├── _reset.scss
+                            ├── _grid.scss
+                            ├── _buttons.scss
+                            ├── _iconfont.scss
+                            ......
+                            ├── _home.scss
+                            ├── _index.scss
+                            ......
+                            ├── style.scss
+                        </code>
                     </pre>
                 </div>
                 <p>其中<code>_grid.scss</code>这种命名带有<code>_</code>，都是当做<code>@import</code>导入使用的，这也是告诉 Sass 在编译的时候，不会编译输出这类文件。因为在使用 Grunt 时会监控目录整个目录的变化，从而再编译输出。</p>
@@ -91,7 +93,7 @@
                       <a href="https://github.com/zurb/foundation">foundation</a>
                   </li>
                 </ol>
-            </div>
+            </article>
 
             <div class="blog-post">
                 <h2 class="blog-post-title">Sass 学习笔记 - 项目文件结构</h2>

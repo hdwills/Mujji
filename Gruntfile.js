@@ -170,7 +170,7 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: [
-                    '<%= config.src %>/**'
+                    '<%= config.src %>/**/*{.html,.scss,.js}'
                 ],
                 tasks: 'dev'
             }

@@ -1,0 +1,17 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+$red:                    #7f0019 !default;
+$cyan:                   #007f66 !default;
+$brand-chase:            #f5f2e9 !default;
+$brand-shencha:          #f5eedd !default;
+$brand-instagram:        #3f729b !default;
+$brand-weibo:            #e6162e !default;
+$brand-github:           #4183c4 !default;
+
+$gray-base:              #000 !default;
+$gray-dark:              lighten($gray-base, 20%) !default; // #333
+$gray-light:             lighten($gray-base, 40%) !default; // #666
+$gray-lighter:           lighten($gray-base, 60%) !default; // #999
